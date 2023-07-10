@@ -1,0 +1,285 @@
+.products {
+  padding: 0 20px 20px;
+}
+.products .product-title {
+  text-align: center;
+  padding: 8px;
+  background-color: #e5e5e5;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: 0;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 16px;
+}
+.products-container .products-card {
+  width: 24%;
+  margin: 8px 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  border-radius: 16px;
+  position: relative;
+}
+.products-container .products-card div {
+  text-align: center;
+}
+.products-container .products-card img {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  padding: 8px;
+}
+.products-container .products-card .button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #111;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 8px;
+  margin: 0 0 16px;
+}
+.products-container .products-card .button:hover {
+  background-color: #555;
+}
+.products-container .old-price {
+  text-decoration: line-through;
+  color: #797979;
+  font-size: 15px;
+}
+.products-container .show-more:hover + .card-backdrop {
+  visibility: visible;
+  height: 20%;
+}
+.products-container .card-backdrop {
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.95);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  border-radius: 16px;
+  padding: 8px;
+  color: white;
+  visibility: hidden;
+}
+.products-container .card-backdrop h4 {
+  visibility: hidden;
+  opacity: 0;
+  position: relative;
+}
+.products-container .card-backdrop h4 .tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  font-size: 11px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.products-container .card-backdrop h4 .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+.products-container .card-backdrop h4:hover .tooltip {
+  animation: 1.1s show-tooltip ease-in-out;
+  visibility: visible;
+  opacity: 1;
+}
+@keyframes show-tooltip {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  60% {
+    visibility: visible;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.products-container .card-backdrop h4 a {
+  text-decoration: none;
+  color: white;
+}
+.products-container .card-backdrop h4:hover a {
+  color: #e0e0e0;
+}
+.products-container .card-backdrop .product-price {
+  text-align: center;
+  color: #1bde1b;
+  opacity: 0;
+}
+.products-container .card-backdrop .product-description {
+  height: 0;
+  overflow-y: auto;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.products-container .card-backdrop .product-description::-webkit-scrollbar {
+  width: 5px;
+}
+.products-container .card-backdrop .product-description::-webkit-scrollbar-track {
+  background: transparent;
+}
+.products-container .card-backdrop .product-description::-webkit-scrollbar-thumb {
+  background: #888;
+}
+.products-container .card-backdrop .product-description::-webkit-scrollbar-thumb:hover {
+  background: #6e6e6e;
+}
+.products-container .card-backdrop .button {
+  opacity: 0;
+  visibility: hidden;
+  background-color: #0041c7;
+}
+.products-container .card-backdrop .button:hover {
+  background-color: #004ae0;
+}
+.products-container .card-backdrop:hover {
+  visibility: visible;
+  height: 100%;
+  animation: 1s show-more ease-in-out;
+}
+.products-container .card-backdrop:hover .button, .products-container .card-backdrop:hover .product-price, .products-container .card-backdrop:hover h4 {
+  opacity: 1;
+  visibility: visible;
+  animation: 1s fade-in ease-in-out;
+}
+.products-container .card-backdrop:hover .product-description {
+  height: 141.5px;
+  animation: 1s expand-text ease-in-out;
+}
+@keyframes show-more {
+  0% {
+    height: 20%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  70% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes expand-text {
+  0% {
+    height: 0;
+  }
+  10% {
+    height: 0;
+  }
+  100% {
+    height: 141.5px;
+  }
+}
+
+.ribbon {
+  position: absolute;
+  left: -5px;
+  top: -4px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px;
+  height: 75px;
+  text-align: right;
+}
+.ribbon span {
+  font-size: 10px;
+  font-weight: bold;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  width: 100px;
+  display: block;
+  background: #79A70A;
+  background: linear-gradient(#F70505 0%, #8F0808 100%);
+  box-shadow: 0 3px 10px -5px rgb(0, 0, 0);
+  position: absolute;
+  top: 19px;
+  left: -21px;
+}
+.ribbon span::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid #8F0808;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #8F0808;
+}
+.ribbon span::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #8F0808;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #8F0808;
+}
+
+@media screen and (max-width: 800px) {
+  .products-container .products-card {
+    float: none;
+    width: 32%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .products-container .products-card {
+    float: none;
+    width: 49%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .products-container .products-card {
+    float: none;
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */

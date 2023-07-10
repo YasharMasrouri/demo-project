@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./../main.css">
+    <link rel="stylesheet" href="./../styles/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./../scripts/main.js"></script>
+</head>
+<body class="preload">
+<div class="backdrop" id="backdrop" onclick="closeBackdrop()">
+    <div class="form-card" onclick="event.stopPropagation()">
+        <label class="form-card-close-btn" onclick="closeBackdrop()"><i class="fa fa-close"></i></label>
+        <div class="form-card-content" id="login-card">
+            <h4>Welcome back!</h4>
+            <form>
+                <input type="text" placeholder="Username or Email" required>
+                <input type="password" placeholder="Password" required>
+                <div class="form-card-buttons">
+                    <a href="#">Forgot password?</a>
+                    <input type="submit" value="Login">
+                </div>
+            </form>
+            <hr>
+            <div class="form-card-signUp">
+                <p>Don't have an account?</p>
+                <button onclick="showSignIn()">Create account</button>
+            </div>
+
+        </div>
+        <div class="form-card-content" id="signIn-card">
+            <h4>Create account!</h4>
+            <form>
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Repeat password" required>
+                <input type="submit" value="Create account">
+            </form>
+            <hr>
+            <div class="form-card-signUp">
+                <p>Already a user?</p>
+                <button onclick="showLogin()">Login</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header class="main-header">
+    <div class="main-header-bar">
+        <h1>LOGO</h1>
+        <div>
+            <button class="header-bar-button" onclick="showLogin()">Login</button>
+            <button class="header-bar-button" onclick="showSignIn()">Sign In</button>
+        </div>
+    </div>
+    <div class="slideShow">
+        <img class="slideShow-slide" src="./../images/wallpaper/night.jpg" alt="night image">
+        <img class="slideShow-slide" src="./../images/wallpaper/pirate-ship.jpg" alt="ship image">
+        <img class="slideShow-slide" src="./../images/wallpaper/halloween.jpg" alt="halloween image">
+        <div class="slideShow-buttons">
+            <div class="slideShow-button-nav" onclick="plusDivs(-1)">&#10094;</div>
+            <div class="slideShow-badges-container">
+                <span class="slideShow-image-badge" onclick="currentDiv(1)"></span>
+                <span class="slideShow-image-badge" onclick="currentDiv(2)"></span>
+                <span class="slideShow-image-badge" onclick="currentDiv(3)"></span>
+            </div>
+            <div class="slideShow-button-nav" onclick="plusDivs(1)">&#10095;</div>
+        </div>
+    </div>
+</header>
+
+<nav class="navbar" role="navigation" id="mainNav">
+    <a href="./../index.html">Home</a>
+    <div class="navbar-dropdown">
+        <button class="navbar-dropdown-button active" onclick="toggleDropdown()">About
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div id="about-dropdown-content" class="navbar-dropdown-content">
+            <a href="#about-aboutUs" onclick="toggleDropdown(), navbarResponsive()">About Us</a>
+            <a href="#about-ourTeam" onclick="toggleDropdown(), navbarResponsive()">Our Team</a>
+        </div>
+    </div>
+    <a href="./contact.html">Contact</a>
+    <a class="navbar-icon" onclick="navbarResponsive()"><i class="fa fa-bars"></i></a>
+</nav>
+
+<div class="main-section">
+
+    <div class="container" id="about-aboutUs">
+        <div class="image">
+            <img src="./../images/undraw_programming.svg">
+        </div>
+        <div class="info">
+            <h2>About us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium at commodi consequuntur cumque
+                delectus eaque earum enim eos error eveniet id illum libero molestiae non, pariatur ratione recusandae
+                tempore tenetur?</p>
+        </div>
+    </div>
+
+    <div class="team" id="about-ourTeam">
+        <h2 class="team-title">Our Team</h2>
+        <div class="team-container">
+            <div class="card">
+                <img src="./../images/undraw_male_avatar.svg" alt="Jane">
+                <div class="card-container">
+                    <h3>Jane Doe</h3>
+                    <p class="title">CEO & Founder</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>jane@example.com</p>
+                    <button class="button">Contact</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./../images/undraw_female_avatar.svg" alt="Jane">
+                <div class="card-container">
+                    <h3>Sara Tyson</h3>
+                    <p class="title">Backend Developer</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>mike@example.com</p>
+                    <button class="button">Contact</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./../images/undraw_male_avatar.svg" alt="Jane">
+                <div class="card-container">
+                    <h3>Ronnie Colman</h3>
+                    <p class="title">Frontend Developer</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>ronnie@example.com</p>
+                    <button class="button">Contact</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./../images/undraw_male_avatar.svg" alt="Jane">
+                <div class="card-container">
+                    <h3>Jack Jones</h3>
+                    <p class="title">UI/UX Designer</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>ronnie@example.com</p>
+                    <button class="button">Contact</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="social-media-container">
+        <a href="#" class="fa fa-facebook social-media-icon"></a>
+        <a href="#" class="fa fa-twitter social-media-icon"></a>
+        <a href="#" class="fa fa-instagram social-media-icon"></a>
+        <a href="#" class="fa fa-linkedin social-media-icon"></a>
+    </div>
+    <p>© 2023 Yashar Masrouri. All rights reserved</p>
+    <a class="footer-links" href="#">Privacy Policy</a>
+    <a class="footer-links" href="#">Terms of Use</a>
+</footer>
+</body>
+</html>

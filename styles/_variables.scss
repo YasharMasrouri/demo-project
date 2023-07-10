@@ -1,0 +1,239 @@
+$navbar-background: #333;
+$active-color: #04AA6D;
+$active-color-hover: #048d5c;
+$navbar-button-text: #f2f2f2;
+$navbar-background-hover: #ddd;
+$order-color: #0041c7;
+$order-color-hover: #004ae0;
+$rating-star-color: #ff5200;
+$rating-good-point: #00A049;
+$rating-average-point: #65AA57;
+$rating-bad-point: #F9BC00;
+$like-color: #0ed264;
+$dislike-color: #ff4400;
+$card-header-color: #0f1111;
+
+@mixin card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 16px;
+}
+@mixin card {
+  width: 24%;
+  margin: 8px 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  border-radius: 16px;
+  div {
+    text-align: center;
+  }
+  img {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    padding: 8px;
+  }
+  .button {
+    @include main-button;
+  }
+}
+@mixin main-button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #111;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 8px;
+  margin: 0 0 16px;
+
+  &:hover {
+    background-color: #555;
+  }
+}
+@mixin personal-card-image {
+  margin-top: 60px;
+  img {
+    height: 120px;
+    width: 120px;
+    transform: translateY(-50%);
+    margin: 0 auto -65px;
+    background-color: white;
+    padding: 0;
+  }
+}
+@mixin product-title {
+  text-align: center;
+  padding: 8px;
+  background-color: #e5e5e5;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: 0;
+}
+@mixin input-text {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  outline: none;
+  &:focus {
+    border: 1px #666 solid;
+  }
+}
+@mixin input-submit {
+  background-color: $active-color;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $active-color-hover;
+  }
+}
+@mixin backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 6;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+@mixin corner-ribbon {
+  position: absolute;
+  left: -5px;
+  top: -4px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px;
+  height: 75px;
+  text-align: right;
+
+  span {
+    font-size: 10px;
+    font-weight: bold;
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 20px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    width: 100px;
+    display: block;
+    background: #79A70A;
+    background: linear-gradient(#F70505 0%, #8F0808 100%);
+    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 19px;
+    left: -21px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 100%;
+      z-index: -1;
+      border-left: 3px solid #8F0808;
+      border-right: 3px solid transparent;
+      border-bottom: 3px solid transparent;
+      border-top: 3px solid #8F0808;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0px;
+      top: 100%;
+      z-index: -1;
+      border-left: 3px solid transparent;
+      border-right: 3px solid #8F0808;
+      border-bottom: 3px solid transparent;
+      border-top: 3px solid #8F0808;
+    }
+  }
+}
+@mixin scroll-bar {
+  /* width */
+  &::-webkit-scrollbar {
+    width: 5px;
+
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    //background: #f1f1f1;
+    background: transparent;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #6e6e6e;
+  }
+}
+@mixin has-tooltip {
+
+  position: relative;
+
+  .tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    font-size: 11px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+  }
+  &:hover {
+    .tooltip {
+      animation: 1.1s show-tooltip ease-in-out;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes show-tooltip {
+    0% {visibility: hidden; opacity: 0}
+    60% {visibility: visible; opacity: 0}
+    100% {visibility: visible;opacity: 1}
+  }
+}

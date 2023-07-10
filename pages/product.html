@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./../main.css">
+    <link rel="stylesheet" href="./../styles/product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./../scripts/main.js"></script>
+</head>
+<body class="preload">
+<div class="backdrop" id="backdrop" onclick="closeBackdrop()">
+    <div class="form-card" onclick="event.stopPropagation()">
+        <label class="form-card-close-btn" onclick="closeBackdrop()"><i class="fa fa-close"></i></label>
+        <div class="form-card-content" id="login-card">
+            <h4>Welcome back!</h4>
+            <form>
+                <input type="text" placeholder="Username or Email" required>
+                <input type="password" placeholder="Password" required>
+                <div class="form-card-buttons">
+                    <a href="#">Forgot password?</a>
+                    <input type="submit" value="Login">
+                </div>
+            </form>
+            <hr>
+            <div class="form-card-signUp">
+                <p>Don't have an account?</p>
+                <button onclick="showSignIn()">Create account</button>
+            </div>
+
+        </div>
+        <div class="form-card-content" id="signIn-card">
+            <h4>Create account!</h4>
+            <form>
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Repeat password" required>
+                <input type="submit" value="Create account">
+            </form>
+            <hr>
+            <div class="form-card-signUp">
+                <p>Already a user?</p>
+                <button onclick="showLogin()">Login</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header class="main-header">
+    <div class="main-header-bar">
+        <h1>LOGO</h1>
+        <div>
+            <button class="header-bar-button" onclick="showLogin()">Login</button>
+            <button class="header-bar-button" onclick="showSignIn()">Sign In</button>
+        </div>
+    </div>
+    <div class="slideShow">
+        <img class="slideShow-slide" src="./../images/wallpaper/night.jpg" alt="night image">
+        <img class="slideShow-slide" src="./../images/wallpaper/pirate-ship.jpg" alt="ship image">
+        <img class="slideShow-slide" src="./../images/wallpaper/halloween.jpg" alt="halloween image">
+        <div class="slideShow-buttons">
+            <div class="slideShow-button-nav" onclick="plusDivs(-1)">&#10094;</div>
+            <div class="slideShow-badges-container">
+                <span class="slideShow-image-badge" onclick="currentDiv(1)"></span>
+                <span class="slideShow-image-badge" onclick="currentDiv(2)"></span>
+                <span class="slideShow-image-badge" onclick="currentDiv(3)"></span>
+            </div>
+            <div class="slideShow-button-nav" onclick="plusDivs(1)">&#10095;</div>
+        </div>
+    </div>
+</header>
+
+<nav class="navbar" role="navigation" id="mainNav">
+    <a href="./../index.html">Home</a>
+    <div class="navbar-dropdown">
+        <button class="navbar-dropdown-button" onclick="toggleDropdown()">About
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div id="about-dropdown-content" class="navbar-dropdown-content">
+            <a href="./../pages/about.html#about-aboutUs">About Us</a>
+            <a href="./../pages/about.html#about-ourTeam">Our Team</a>
+        </div>
+    </div>
+    <a href="./../pages/contact.html">Contact</a>
+    <a class="navbar-icon" onclick="navbarResponsive()"><i class="fa fa-bars"></i></a>
+</nav>
+
+<div class="main-section">
+    <div class="product-info">
+        <div class="product-info-pic">
+            <div class="product-info-pics-slides">
+                <img src="./../images/products/img1.jpg" class="product-info-pic-slide" alt="product image">
+                <img src="./../images/products/img2.jpg" class="product-info-pic-slide" alt="product image">
+                <img src="./../images/products/img3.jpg" class="product-info-pic-slide" alt="product image">
+            </div>
+            <div class="product-info-pic-badges">
+                <img src="./../images/products/img1.jpg" class="product-info-pic-badge" alt="product image"
+                     onclick="currentSlide(1)">
+                <img src="./../images/products/img2.jpg" class="product-info-pic-badge" alt="product image"
+                     onclick="currentSlide(2)">
+                <img src="./../images/products/img3.jpg" class="product-info-pic-badge" alt="product image"
+                     onclick="currentSlide(3)">
+            </div>
+        </div>
+        <div class="product-info-details">
+            <h2>BalanceFrom Wide Grip Kettlebell Exercise Fitness Weight Set,
+                Choice of 30 lb Set, 45 lb Set or 50 lb Set</h2>
+            <div class="product-info-details-rating">
+                <span>4.2</span>
+                <div>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <a href="#product-reviews">736 ratings</a>
+            </div>
+            <hr>
+            <div class="product-info-details-specifications">
+                <table>
+                    <tr>
+                        <td>Item Weight</td>
+                        <td>30 Pounds</td>
+                    </tr>
+                    <tr>
+                        <td>Brand</td>
+                        <td>BalanceForm</td>
+                    </tr>
+                    <tr>
+                        <td>Color</td>
+                        <td>Multiple</td>
+                    </tr>
+                    <tr>
+                        <td>Material</td>
+                        <td>Vinly</td>
+                    </tr>
+                    <tr>
+                        <td>Special Feature</td>
+                        <td>Portable, Ergonomic</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="product-info-details-about">
+                <h2>About this item</h2>
+                <ul>
+                    <li>Set of 3 - Set includes 3 kettlebells at 10, 15, and 20 pounds</li>
+                    <li>Ergonomic Handle - Wide and comfortable grips make these weights easy to hold and ideal for the
+                        maneuverings
+                    </li>
+                    <li>Rust Free - Made of durable vinyl and filled with cement, will not get rusty</li>
+                    <li>10-Pound Kettlebell: 5" x 8.5"; 15-Pound Kettlebell: 6.5" x 9.5"; 20-Pound Kettlebell: 7" x
+                        11"
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="product-info-order">
+            <div class="product-info-order-card">
+                <p class="order-recommendation"><i class="fa fa-thumbs-o-up"></i> <span>80.4%</span> recommend this
+                    product</p>
+                <p class="order-guarantee"><i class="fa fa-check-square-o"></i> Product health guarantee</p>
+                <p class="order-location"><i class="fa fa-map-marker"></i> Deliver to Iran, Tabriz</p>
+                <hr>
+                <div class="product-info-order-section">
+                    <div class="product-info-order-price">
+                        <p class="product-info-order-price-text"><i class="fa fa-tag"></i> Price: </p>
+                        <div>
+                            <p class="old-price-p"><span class="off-amount">10%</span> <span
+                                    class="old-price">$55.99</span></p>
+                            <p class="new-price">$50.39</p>
+                        </div>
+                    </div>
+                    <button class="product-info-order-button"><span><i class="fa fa-cart-plus"></i></span> Add to cart
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-reviews" id="product-reviews">
+        <div class="product-reviews-card">
+            <div class="product-review-customer">
+                <h2>Customer reviews</h2>
+                <div class="product-review-customer-rating">
+                    <div>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <span>4.2 out of 5</span>
+                </div>
+                <span class="product-review-customer-count">736 global ratings</span>
+            </div>
+            <hr>
+            <div class="product-review-features">
+                <h4 class="product-review-features-title">By feature</h4>
+                <div class="product-review-feature">
+                    <span class="product-review-feature-title">Easy to use</span>
+                    <div>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <span>3.1</span>
+                    </div>
+                </div>
+                <div class="product-review-feature">
+                    <span class="product-review-feature-title">Value for money</span>
+                    <div>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <span>3.9</span>
+                    </div>
+                </div>
+                <div class="product-review-feature">
+                    <span class="product-review-feature-title">Comfort</span>
+                    <div>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <span>3.5</span>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="product-review-add">
+                <h4 class="product-review-add-title">Review this product</h4>
+                <span class="product-review-add-text">Share your thoughts with other customers</span>
+                <button class="product-review-add-button">Write a customer review</button>
+            </div>
+            <hr>
+        </div>
+        <div class="product-reviews-comments">
+            <div class="product-review-comment">
+                <div class="comment-rating">
+                    <span class="comment-rating-point comment-rating-average">3.0</span>
+                    <span class="comment-rating-text">Boxing was not good</span>
+                </div>
+                <div class="comment-profile">
+                    <span>Username</span>
+                    <span>July 09, 2023</span>
+                </div>
+                <div class="comment-text">
+                    <p>The packaging was poorly done and when I got it, it was damaged,
+                        but overall it was a nice product, I recommend you get it.
+                    </p>
+                </div>
+                <div class="comment-like">
+                    <span class="comment-like-text">Was this comment helpful?</span>
+                    <span class="comment-like-button thumbs-up"><i class="fa fa-thumbs-o-up"></i></span>
+                    <span class="comment-like-button thumbs-down"><i class="fa fa-thumbs-o-down"></i></span>
+
+                </div>
+            </div>
+            <div class="product-review-comment">
+                <div class="comment-rating">
+                    <span class="comment-rating-point comment-rating-good">5.0</span>
+                    <span class="comment-rating-text">Loved it</span>
+                </div>
+                <div class="comment-profile">
+                    <span>Nelson</span>
+                    <span>July 08, 2023</span>
+                </div>
+                <div class="comment-text">
+                    <p>I loved it, it is very useful.</p>
+                </div>
+                <div class="comment-like">
+                    <span class="comment-like-text">Was this comment helpful?</span>
+                    <span class="comment-like-button thumbs-up"><i class="fa fa-thumbs-o-up"></i></span>
+                    <span class="comment-like-button thumbs-down"><i class="fa fa-thumbs-o-down"></i></span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="social-media-container">
+        <a href="#" class="fa fa-facebook social-media-icon"></a>
+        <a href="#" class="fa fa-twitter social-media-icon"></a>
+        <a href="#" class="fa fa-instagram social-media-icon"></a>
+        <a href="#" class="fa fa-linkedin social-media-icon"></a>
+    </div>
+    <p>© 2023 Yashar Masrouri. All rights reserved</p>
+    <a class="footer-links" href="#">Privacy Policy</a>
+    <a class="footer-links" href="#">Terms of Use</a>
+</footer>
+
+</body>
+</html>

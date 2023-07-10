@@ -1,0 +1,155 @@
+@import "./variables";
+
+.products {
+  padding: 0 20px 20px;
+
+  .product-title {
+    @include product-title;
+  }
+}
+
+.products-container {
+  @include card-container;
+
+  .products-card {
+    @include card;
+    position: relative;
+  }
+
+  .old-price {
+    text-decoration: line-through;
+    color: #797979;
+    font-size: 15px;
+  }
+
+  .show-more:hover + .card-backdrop {
+    visibility: visible;
+    height: 20%;
+  }
+
+
+  .card-backdrop {
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    border-radius: 16px;
+    padding: 8px;
+    color: white;
+    visibility: hidden;
+
+    h4 {
+      visibility: hidden;
+      opacity: 0;
+      @include has-tooltip;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      &:hover {
+        a {
+          color: #e0e0e0;
+        }
+      }
+    }
+
+    .product-price {
+      text-align: center;
+      color: #1bde1b;
+      opacity: 0;
+    }
+
+    .product-description {
+      height: 0;
+      overflow-y: auto;
+      @include scroll-bar;
+    }
+
+    .button {
+      opacity: 0;
+      visibility: hidden;
+      background-color: $order-color;
+
+      &:hover {
+        background-color: $order-color-hover;
+      }
+    }
+
+    &:hover {
+      visibility: visible;
+      height: 100%;
+      animation: 1s show-more ease-in-out;
+
+      .button, .product-price, h4 {
+        opacity: 1;
+        visibility: visible;
+        animation: 1s fade-in ease-in-out;
+      }
+
+      .product-description {
+        height: 141.5px;
+        animation: 1s expand-text ease-in-out;
+      }
+    }
+
+    @keyframes show-more {
+      0% {
+        height: 20%;
+      }
+      100% {
+        height: 100%;
+      }
+    }
+    @keyframes fade-in {
+      0% {opacity: 0; visibility: hidden;}
+      70% {opacity: 0; visibility: visible;}
+      100% {opacity: 1;}
+    }
+    @keyframes expand-text {
+      0% {
+        height: 0;
+      }
+      10% {
+        height: 0;
+      }
+      100% {
+        height: 141.5px
+      }
+    }
+  }
+}
+
+.ribbon {
+  @include corner-ribbon;
+}
+
+
+@media screen and (max-width: 800px) {
+  .products-container {
+    .products-card {
+      float: none;
+      width: 32%;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .products-container {
+    .products-card {
+      float: none;
+      width: 49%;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .products-container {
+    .products-card {
+      float: none;
+      width: 100%;
+    }
+  }
+}
